@@ -14,6 +14,57 @@ const BrowserSnapshotDefaultsSchema = z
   .strict()
   .optional();
 
+const OpenSparkMcpServerSchema = z
+  .object({
+    name: z.string().min(1),
+    url: z.string().url(),
+    transport: z.union([z.literal("http"), z.literal("https")]).optional(),
+  })
+  .strict();
+
+const OpenSparkSchema = z
+  .object({
+    enabled: z.boolean().optional(),
+    security: z
+      .object({
+        requireConsent: z.boolean().optional(),
+        consentMode: z.union([z.literal("always"), z.literal("once-per-session")]).optional(),
+        allowSecretsAfterConsent: z.boolean().optional(),
+      })
+      .strict()
+      .optional(),
+    memory: z
+      .object({
+        operatorControls: z.boolean().optional(),
+        maxEntries: z.number().int().positive().optional(),
+      })
+      .strict()
+      .optional(),
+    models: z
+      .object({
+        allowModelSelection: z.boolean().optional(),
+        defaultModel: z.string().optional(),
+      })
+      .strict()
+      .optional(),
+    integrations: z
+      .object({
+        n8nBaseUrl: z.string().url().optional(),
+        mcpServers: z.array(OpenSparkMcpServerSchema).optional(),
+      })
+      .strict()
+      .optional(),
+    browserExtension: z
+      .object({
+        enabled: z.boolean().optional(),
+        allowedOrigins: z.array(z.string()).optional(),
+      })
+      .strict()
+      .optional(),
+  })
+  .strict()
+  .optional();
+
 const NodeHostSchema = z
   .object({
     browserProxy: z
@@ -207,6 +258,7 @@ export const MoltbotSchema = z
       .strict()
       .optional(),
     models: ModelsConfigSchema,
+    openSpark: OpenSparkSchema,
     nodeHost: NodeHostSchema,
     agents: AgentsSchema,
     tools: ToolsSchema,
