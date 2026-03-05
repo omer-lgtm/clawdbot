@@ -79,7 +79,7 @@ const SECTIONS: Array<{ key: string; label: string }> = [
   { key: "env", label: "Environment" },
   { key: "update", label: "Updates" },
   { key: "agents", label: "Agents" },
-  { key: "openSpark", label: "OpenSpark" },
+  { key: "openSpark", label: "Open Spark" },
   { key: "auth", label: "Authentication" },
   { key: "channels", label: "Channels" },
   { key: "messages", label: "Messages" },

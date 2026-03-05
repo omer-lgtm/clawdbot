@@ -75,7 +75,7 @@ export const SECTION_META: Record<string, { label: string; description: string }
   browser: { label: "Browser", description: "Browser automation settings" },
   ui: { label: "UI", description: "User interface preferences" },
   models: { label: "Models", description: "AI model configurations and providers" },
-  openSpark: { label: "OpenSpark", description: "Unified security-first AGI workspace profile" },
+  openSpark: { label: "Open Spark", description: "Unified security-first AGI workspace profile" },
   bindings: { label: "Bindings", description: "Key bindings and shortcuts" },
   broadcast: { label: "Broadcast", description: "Broadcast and notification settings" },
   audio: { label: "Audio", description: "Audio input/output settings" },

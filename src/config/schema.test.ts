@@ -14,11 +14,11 @@ describe("config schema", () => {
     expect(res.generatedAt).toBeTruthy();
   });
 
-  it("includes OpenSpark integration schema + hints", () => {
+  it("includes Open Spark integration schema + hints", () => {
     const res = buildConfigSchema();
     const schema = res.schema as { properties?: Record<string, unknown> };
     expect(schema.properties?.openSpark).toBeTruthy();
-    expect(res.uiHints.openSpark?.label).toBe("OpenSpark");
+    expect(res.uiHints.openSpark?.label).toBe("Open Spark");
     expect(res.uiHints["openSpark.integrations.n8nBaseUrl"]?.label).toBe("n8n Base URL");
   });
 

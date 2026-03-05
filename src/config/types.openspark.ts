@@ -10,7 +10,7 @@ export type OpenSparkMcpServerConfig = {
 };
 
 export type OpenSparkConfig = {
-  /** Turn on the OpenSpark workspace experience. */
+  /** Turn on the Open Spark workspace experience. */
   enabled?: boolean;
   security?: {
     /** Require explicit operator confirmation before privileged actions. */
@@ -23,11 +23,11 @@ export type OpenSparkConfig = {
   memory?: {
     /** Let operators inspect and prune memory from the control UI. */
     operatorControls?: boolean;
-    /** Maximum memory entries retained by OpenSpark context tools. */
+    /** Maximum memory entries retained by Open Spark context tools. */
     maxEntries?: number;
   };
   models?: {
-    /** Show model picker controls in OpenSpark surfaces. */
+    /** Show model picker controls in Open Spark surfaces. */
     allowModelSelection?: boolean;
     /** Optional provider/model id used as a startup default. */
     defaultModel?: string;
